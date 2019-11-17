@@ -1,0 +1,28 @@
+$query-phone: 320px;
+$query-tablet: 768px;
+$query-desktop: 1224px;
+$query-desktop-large: 3000px;
+
+@mixin phone {
+    @media (min-width: #{$query-phone}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media(min-width: #{$query-tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$query-desktop}) {
+        @content;
+    }
+}
+
+@mixin desktop-large {
+    @media (min-width: #{$query-desktop-large}) {
+        @content;
+    }
+}

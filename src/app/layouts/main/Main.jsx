@@ -9,6 +9,7 @@ import { AnimatePresence } from 'framer-motion';
 /*
 Components
 */
+import Header from '../../components/general';
 
 /*
 Pages
@@ -22,6 +23,7 @@ import NotFoundPage from '../../pages/not-found-page';
 const Main = () => {
     return (
         <>
+            <Header />
             <Router>
                 <AnimatePresence exitBeforeEnter>
                     <Switch>

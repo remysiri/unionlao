@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@popmotion/popcorn": "^0.4.4",
     "framer-motion": "^1.6.15",
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
