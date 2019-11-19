@@ -1,15 +1,25 @@
 header {
-    position: relative;
+    position: fixed;
     z-index: 10;
-    padding: 1rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-content: center;
-    margin: 4.4rem;
+    width: 100%;
+
+    .header-menu {
+        margin: 4.4rem;
+
+        span {
+            color: white;
+            font-weight: 700;
+            padding-left: 1.5rem;
+        }
+    }
 
     .header__language-selector {
         text-align: right;
+        margin: 4.4rem;
         
         a {
             color: #C2C2C2;

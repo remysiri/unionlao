@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <>
             <header>
-                <div className="header-menu"><img src={ Menu } alt="menu-icon"/></div>
+                <div className="header-menu"><img src={ Menu } alt="menu-icon"/><span>Menu</span></div>
                 <div className="header__language-selector"><a href="#">FR</a></div>
             </header>
         </>
