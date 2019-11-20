@@ -1,0 +1,33 @@
+.detail__wrapper {
+    padding-top: 10rem;
+
+    .detail {
+        .detail__content {
+            margin: 4.4rem;
+
+            .detail__content-title {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .detail__content-date {
+                margin-top: 0;
+                margin-bottom: 2rem;
+            }
+
+            .detail__content-body {
+                margin-top: 4rem;
+                font-size: 1.8rem;
+                line-height: 1.5;
+            }
+        }
+
+        .detail__images {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

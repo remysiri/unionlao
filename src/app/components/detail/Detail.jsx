@@ -1,17 +1,18 @@
 import React from 'react';
+import Moment from 'react-moment';
 
 const Detail = (props) => {
     const data = props.album;
     return (
         <>
-        <section>
-            <article>
-                <section>
-                    <h1>{ data.title }</h1>
-                    <p>{ data.postDate && data.postDate.date }</p>
-                    <p>{ data.description }</p>
+        <section className="detail__wrapper">
+            <article className="detail">
+                <section className="detail__content">
+                    <h1 className="detail__content-title">{ data.title }</h1>
+                    <p className="detail__content-date"><Moment format="DD/MM/YYYY">{ data.postDate && data.postDate.date }</Moment></p>
+                    <p className="detail__content-body">{ data.description }</p>
                 </section>
-                <section>
+                <section className="detail__images">
                     {!data.images ? undefined : data.images.map((image) => {
                         return <img src={image} alt={image} key={image} />
                     })}
