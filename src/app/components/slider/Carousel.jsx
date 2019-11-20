@@ -91,7 +91,7 @@ const Carousel = (props) => {
                     <motion.article className="slider" key={albums[key] && albums[key].id} variants={thumbnailVariants}>
                     <motion.div className="slider__content" variants={textVariants}>
                         <h1>{ albums[key] && albums[key].title }</h1>
-                        <p><Moment format="DD/MM/YYYY">{ !albums[key] ? undefined : albums[key].postDate }</Moment></p>
+                        <p><Moment format="DD/MM/YYYY">{ !albums[key] ? undefined : albums[key].postDate.date }</Moment></p>
                     </motion.div>
                     <div className="slider__cover"></div>
                     </motion.article>
