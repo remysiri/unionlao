@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Detail from '../../components/detail';
+import { motion } from 'framer-motion';
 
 const DetailPage = (props) => {
     const [data, setData] = useState({});
@@ -23,7 +24,9 @@ const DetailPage = (props) => {
 
 
     return (
-        <Detail album={data}/>
+        <motion.div initial="exit" animate="enter" exit="exit">
+            <Detail album={data}/>
+        </motion.div>
     )
 }
 
