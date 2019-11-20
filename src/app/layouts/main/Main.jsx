@@ -39,8 +39,8 @@ const Main = () => {
 
     return (
         <>
-            <Header lang={ language } />
             <Router>
+                <Header lang={ language } /> 
                 <AnimatePresence exitBeforeEnter initial={false}>
                     <Switch>
                         <Redirect from="/home" to="/"/>

@@ -11,7 +11,6 @@ header {
         margin: 4.4rem 0 4.4rem 4.4rem;
 
         span {
-            color: white;
             font-weight: 700;
             padding-left: 1.5rem;
         }
@@ -24,6 +23,14 @@ header {
         a {
             color: #C2C2C2;
         }
+    }
+
+    .light {
+        color: white;
+    }
+
+    .dark {
+        color: black;
     }
 }
 
