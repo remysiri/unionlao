@@ -1,5 +1,6 @@
 import React from 'react';
 import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
 
 const Detail = (props) => {
     const data = props.album;
@@ -18,6 +19,13 @@ const Detail = (props) => {
                     })}
                 </section>
             </article>
+        </section>
+        <section className="backButton">
+            <Link to="/">
+                <div className="circle">
+                    <p className="cross">X</p>
+                </div>
+            </Link>
         </section>
         </>
     );
