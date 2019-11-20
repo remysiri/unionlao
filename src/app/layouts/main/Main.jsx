@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 /*
 Libraries
@@ -22,18 +22,6 @@ import NotFoundPage from '../../pages/not-found-page';
 
 const Main = () => {
     const [language, setLanguage] = useState('fr');
-    const [albums, setAlbums] = useState({});
-
-    async function fetchData() {
-        const res = await fetch(`https://cms.unionlao.be/${language}/api/albums.json`);
-        res
-            .json()
-            .then(res => setAlbums(res.data))
-    }
-
-    useEffect(() => {
-        fetchData();
-    }, []);
 
 
 
@@ -44,8 +32,8 @@ const Main = () => {
                 <AnimatePresence exitBeforeEnter initial={false}>
                     <Switch>
                         <Redirect from="/home" to="/"/>
-                        <Route exact path="/" render={() => <HomePage albums={albums}/>}/>
-                        <Route exact path="/album/:slug" component={ DetailPage }/>
+                        <Route exact path="/" render={() => <HomePage lang={language}/>}/>
+                        <Route exact path="/album/:slug" render={() => <DetailPage lang={language}/>}/>
                         <Route path="/about" component={ AboutPage }/>
                         <Route path="/contact" component={ ContactPage }/>
                         <Route path="*" component={ NotFoundPage }/>
