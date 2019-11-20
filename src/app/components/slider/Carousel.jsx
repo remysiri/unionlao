@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Moment from 'react-moment';
 import { motion, AnimatePresence } from 'framer-motion';
 import { wrap } from '@popmotion/popcorn';
+import { Link } from 'react-router-dom';
 
 
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] };
@@ -47,15 +48,18 @@ const variants = {
 
 const Carousel = (props) => {
     const albums = props.albums;
-
     const [[page, direction], setPage] = useState([0, 0]);
-
-
-  const key = wrap(0, albums.length, page);
-
+    const key = wrap(0, albums.length, page);
     const paginate = (newDirection) => {
         setPage([page + newDirection, newDirection]);
-    };
+	};
+
+	const thumbnailImage = albums[key] && albums[key].images[0];
+
+	const style = {
+		backgroundImage: `url('${thumbnailImage}')`
+	};
+
 
 
     return (
@@ -88,10 +92,12 @@ const Carousel = (props) => {
                     }}
                 >
                   <motion.div initial="initial" animate="enter" exit="exit">
-                    <motion.article className="slider" key={albums[key] && albums[key].id} variants={thumbnailVariants}>
+                    <motion.article className="slider" key={albums[key] && albums[key].id} variants={thumbnailVariants} style={style}>
                     <motion.div className="slider__content" variants={textVariants}>
+                      <Link to={`/album/${albums[key] && albums[key].slug}`}>
                         <h1>{ albums[key] && albums[key].title }</h1>
                         <p><Moment format="DD/MM/YYYY">{ !albums[key] ? undefined : albums[key].postDate.date }</Moment></p>
+                      </Link>
                     </motion.div>
                     <div className="slider__cover"></div>
                     </motion.article>

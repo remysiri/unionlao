@@ -41,11 +41,11 @@ const Main = () => {
         <>
             <Header lang={ language } />
             <Router>
-                <AnimatePresence exitBeforeEnter>
+                <AnimatePresence exitBeforeEnter initial={false}>
                     <Switch>
                         <Redirect from="/home" to="/"/>
                         <Route exact path="/" render={() => <HomePage albums={albums}/>}/>
-                        <Route path="/gallery/:slug" component={ DetailPage }/>
+                        <Route exact path="/album/:slug" component={ DetailPage }/>
                         <Route path="/about" component={ AboutPage }/>
                         <Route path="/contact" component={ ContactPage }/>
                         <Route path="*" component={ NotFoundPage }/>
