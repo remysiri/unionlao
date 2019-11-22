@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 import MenuW from '../../assets/menu-white.svg';
 import MenuB from '../../assets/menu-black.svg';
@@ -23,9 +22,6 @@ const Header = (props) => {
     const [ languageExpanded, setLanguageExpanded] = useState(false);
     const [ animateMenu, setAnimateMenu ] = useState({});
     const [ animateLanguage, setAnimateLanguage ] = useState({});
-    const langFr = useRef(null);
-    const langNl = useRef(null);
-    const langLa = useRef(null);
 
     const expandMenu = useCallback(() => {
         if(menuExpanded === false) {
