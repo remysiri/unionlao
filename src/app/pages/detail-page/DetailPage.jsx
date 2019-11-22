@@ -7,11 +7,10 @@ const DetailPage = (props) => {
     const [data, setData] = useState({});
     let id = useParams();
     let slug = id.slug;
-    const language = props.lang;
     const match = props.match;
 
     async function fetchData() {
-        const res = await fetch(`https://cms.unionlao.be/${language}/api/albums/${slug}.json`);
+        const res = await fetch(`https://cms.unionlao.be/${match.params.locale}/api/albums/${slug}.json`);
         res
             .json()
             .then(res => setData(res))

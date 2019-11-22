@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 /*
 Libraries
 */
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 /*
@@ -21,17 +21,8 @@ import ContactPage from '../../pages/contact-page';
 import NotFoundPage from '../../pages/not-found-page';
 
 const Main = ({match, location}) => {
-    const [language, setLanguage] = useState('fr');
 
     const changeLanguage = () => {
-        switch (language) {
-            case 'fr':
-              setLanguage('la');
-              break;
-            case 'la':
-              setLanguage('fr');
-              break;
-          }
     }
 
     console.log(match);
@@ -41,11 +32,11 @@ const Main = ({match, location}) => {
     return (
         <>
             <Router>
-                <Header lang={ language } onClick={ changeLanguage } match={ match } /> 
+                <Header onClick={ changeLanguage } match={ match } /> 
                 <AnimatePresence exitBeforeEnter initial={false}>
                     <Switch>
-                        <Route exact path={`${match.url}/`} render={() => <HomePage lang={ language } match={ match }/>}/>
-                        <Route exact path={`${match.url}/album/:slug`} render={() => <DetailPage lang={ language } match={ match }/>}/>
+                        <Route exact path={`${match.url}/`} render={() => <HomePage match={ match }/>}/>
+                        <Route exact path={`${match.url}/album/:slug`} render={() => <DetailPage match={ match }/>}/>
                         <Route path="/about" component={ AboutPage }/>
                         <Route path="/contact" component={ ContactPage }/>
                         <Route path="*" component={ NotFoundPage }/>

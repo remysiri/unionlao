@@ -5,11 +5,10 @@ import { Footer } from '../../components/general';
 
 const HomePage = (props) => {
     const [albums, setAlbums] = useState({});
-    const language = props.lang;
     const match = props.match;
 
     async function fetchData() {
-        const res = await fetch(`https://cms.unionlao.be/${language}/api/albums.json`);
+        const res = await fetch(`https://cms.unionlao.be/${match.params.locale}/api/albums.json`);
         res
             .json()
             .then(res => setAlbums(res.data))
