@@ -13,6 +13,7 @@ const transition = {
 
 const Header = (props) => {
     const language = props.lang;
+    const switchLang = props.onClick;
     let id = useLocation();
 
 
@@ -43,12 +44,11 @@ const Header = (props) => {
     else if (menuExpanded === false) classNames += "";
 
 
-
     return (
         <>
             <header className={classNames}>
                 <div className="header-menu" ref={ menuIcon } onClick={ expandMenu }><img src={id.pathname !== "/" ? MenuB : MenuW } alt="menu-icon"/><span className={id.pathname !== "/" ? "dark" : "light"}>Menu</span></div>
-                <div className="header__language-selector"><a href="//unionlao.be">{ language.toUpperCase() }</a></div>
+                <div className="header__language-selector" onClick={ switchLang }><p>{ language.toUpperCase() }</p></div>
                 <motion.section className="menu" animate={ animateMenu }>
                     <div className="menu__header" ref={ menuIcon } onClick={ expandMenu }><img src={ closeB } alt="menu-icon-close" /><span className="dark">Fermer</span></div>
                     <div><a>Informations sur U.L.B</a></div>

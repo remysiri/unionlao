@@ -23,12 +23,23 @@ import NotFoundPage from '../../pages/not-found-page';
 const Main = () => {
     const [language, setLanguage] = useState('fr');
 
+    const changeLanguage = () => {
+        switch (language) {
+            case 'fr':
+              setLanguage('la');
+              break;
+            case 'la':
+              setLanguage('fr');
+              break;
+          }
+    }
+
 
 
     return (
         <>
             <Router>
-                <Header lang={ language } /> 
+                <Header lang={ language } onClick={ changeLanguage } /> 
                 <AnimatePresence exitBeforeEnter initial={false}>
                     <Switch>
                         <Redirect from="/home" to="/"/>
