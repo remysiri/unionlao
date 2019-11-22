@@ -6,6 +6,7 @@ import { Footer } from '../../components/general';
 const HomePage = (props) => {
     const [albums, setAlbums] = useState({});
     const language = props.lang;
+    const match = props.match;
 
     async function fetchData() {
         const res = await fetch(`https://cms.unionlao.be/${language}/api/albums.json`);
@@ -20,7 +21,7 @@ const HomePage = (props) => {
 
     return (
         <>
-            <Carousel albums={ albums }/>
+            <Carousel albums={ albums } match={ match }/>
             <Footer />
         </>
     )

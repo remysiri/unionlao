@@ -13,6 +13,7 @@ const transition = {
 
 const Header = (props) => {
     const language = props.lang;
+    const match = props.match;
     const switchLang = props.onClick;
     let id = useLocation();
 
@@ -47,7 +48,10 @@ const Header = (props) => {
     return (
         <>
             <header className={classNames}>
-                <div className="header-menu" ref={ menuIcon } onClick={ expandMenu }><img src={id.pathname !== "/" ? MenuB : MenuW } alt="menu-icon"/><span className={id.pathname !== "/" ? "dark" : "light"}>Menu</span></div>
+                <div className="header-menu" ref={ menuIcon } onClick={ expandMenu }>
+                    <img src={id.pathname !== match.url ? MenuB : MenuW } alt="menu-icon"/>
+                    <span className={id.pathname !== match.url ? "dark" : "light"}>Menu</span>
+                </div>
                 <div className="header__language-selector" onClick={ switchLang }><p>{ language.toUpperCase() }</p></div>
                 <motion.section className="menu" animate={ animateMenu }>
                     <div className="menu__header" ref={ menuIcon } onClick={ expandMenu }><img src={ closeB } alt="menu-icon-close" /><span className="dark">Fermer</span></div>

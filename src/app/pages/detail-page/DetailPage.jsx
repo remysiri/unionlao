@@ -8,6 +8,7 @@ const DetailPage = (props) => {
     let id = useParams();
     let slug = id.slug;
     const language = props.lang;
+    const match = props.match;
 
     async function fetchData() {
         const res = await fetch(`https://cms.unionlao.be/${language}/api/albums/${slug}.json`);
@@ -25,7 +26,7 @@ const DetailPage = (props) => {
 
     return (
         <motion.div initial="exit" animate="enter" exit="exit">
-            <Detail album={data}/>
+            <Detail album={data} match={match}/>
         </motion.div>
     )
 }

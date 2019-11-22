@@ -48,6 +48,7 @@ const variants = {
 
 const Carousel = (props) => {
     const albums = props.albums;
+    const match = props.match;
     const [[page, direction], setPage] = useState([0, 0]);
     const key = wrap(0, albums.length, page);
     const paginate = (newDirection) => {
@@ -94,7 +95,7 @@ const Carousel = (props) => {
                   <motion.div initial="initial" animate="enter" exit="exit">
                     <motion.article className="slider" key={albums[key] && albums[key].id} variants={thumbnailVariants} style={style}>
                     <motion.div className="slider__content" variants={textVariants}>
-                      <Link to={`/album/${albums[key] && albums[key].slug}`}>
+                      <Link to={`${match.url}/album/${albums[key] && albums[key].slug}`}>
                         <h1>{ albums[key] && albums[key].title }</h1>
                         <p><Moment format="DD/MM/YYYY">{ !albums[key] ? undefined : albums[key].postDate.date }</Moment></p>
                       </Link>

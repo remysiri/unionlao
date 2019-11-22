@@ -18,6 +18,7 @@ const contentVariant = {
 
 const Detail = (props) => {
     const data = props.album;
+    const match = props.match;
     return (
         <>
             <motion.div initial="exit" animate="enter" exit="exit">
@@ -36,7 +37,7 @@ const Detail = (props) => {
                     </article>
                 </motion.section>
                 <section className="backButton">
-                    <Link to="/">
+                    <Link to={`${match.url}`}>
                         <div className="circle">
                             <p className="cross">X</p>
                         </div>

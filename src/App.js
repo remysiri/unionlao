@@ -18,9 +18,9 @@ Styling
 */
 import './app/_sass/App.scss';
 
-function App() {
+function App({ match, location }) {
   return (
-      <Main />
+      <Main match={match} location={location}/>
   );
 }
 

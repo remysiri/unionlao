@@ -20,7 +20,7 @@ import AboutPage from '../../pages/about-page';
 import ContactPage from '../../pages/contact-page';
 import NotFoundPage from '../../pages/not-found-page';
 
-const Main = () => {
+const Main = ({match, location}) => {
     const [language, setLanguage] = useState('fr');
 
     const changeLanguage = () => {
@@ -34,17 +34,18 @@ const Main = () => {
           }
     }
 
+    console.log(match);
+
 
 
     return (
         <>
             <Router>
-                <Header lang={ language } onClick={ changeLanguage } /> 
+                <Header lang={ language } onClick={ changeLanguage } match={ match } /> 
                 <AnimatePresence exitBeforeEnter initial={false}>
                     <Switch>
-                        <Redirect from="/home" to="/"/>
-                        <Route exact path="/" render={() => <HomePage lang={language}/>}/>
-                        <Route exact path="/album/:slug" render={() => <DetailPage lang={language}/>}/>
+                        <Route exact path={`${match.url}/`} render={() => <HomePage lang={ language } match={ match }/>}/>
+                        <Route exact path={`${match.url}/album/:slug`} render={() => <DetailPage lang={ language } match={ match }/>}/>
                         <Route path="/about" component={ AboutPage }/>
                         <Route path="/contact" component={ ContactPage }/>
                         <Route path="*" component={ NotFoundPage }/>
