@@ -68,3 +68,30 @@ header {
     }
 }
 
+.language {
+    position: absolute;
+    height: 100vh;
+    width: auto;
+    padding: 3rem;
+    background: white;
+    right: 0;
+    transform: translateX(100%) translateZ(0px);
+
+    .menu__header {
+        margin-bottom: 4rem;
+        cursor: pointer;
+        span { font-weight: 700; padding-left: 1.5rem; }
+    }
+
+    div {
+        margin: 1rem .5rem;
+        padding: 1rem;
+
+        p {
+            color: black;
+            font-weight: 700;
+            margin: 0;
+        }
+    }
+}
+

@@ -25,7 +25,7 @@ const Main = ({match, location}) => {
     return (
         <>
             <Router>
-                <Header match={ match } /> 
+                <Header match={ match } location={ location }/> 
                 <AnimatePresence exitBeforeEnter initial={false}>
                     <Switch>
                         <Route exact path={`${match.url}/`} render={() => <HomePage match={ match }/>}/>
