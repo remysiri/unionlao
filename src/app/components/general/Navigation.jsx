@@ -43,13 +43,13 @@ const Header = (props) => {
         if(languageExpanded === false) {
             setLanguageExpanded(true);
             setAnimateLanguage({
-                x: "0%",
+                y: "0%",
                 transition
             });
         } else {
             setLanguageExpanded(false);
             setAnimateLanguage({
-                x: "100%",
+                y: "-100%",
                 transition
             });
         }
@@ -78,6 +78,8 @@ const Header = (props) => {
     if(languageExpanded === true) classNames += " expanded";
     else if(languageExpanded === false) classNames += "";
 
+    console.log(match);
+
 
     return (
         <>
@@ -99,15 +101,13 @@ const Header = (props) => {
                     <div className="menu__footer"><p>© {(new Date().getFullYear())} Unionlao</p></div>
                 </motion.section>
 
-                <motion.section className="language" animate={ animateLanguage }>
-                    <div className="menu__header" onClick={ expandLanguage }>
-                        <img src={ closeB } alt="menu-icon-close" />
-                        <span className="dark">Fermer</span>
-                    </div>
-                    <div><p id="fr" onClick={ languageHandlerFr }>Français</p></div>
-                    <div><p id="nl" onClick={ languageHandlerNl }>Nederlands</p></div>
-                    <div><p id="la" onClick={ languageHandlerLa }>Lao</p></div>
-                </motion.section>
+                <div className="language__wrapper">
+                    <motion.section className="language" animate={ animateLanguage }>
+                        <div><p id="fr" onClick={ languageHandlerFr }>FRA</p></div>
+                        <div><p id="nl" onClick={ languageHandlerNl }>NED</p></div>
+                        <div><p id="la" onClick={ languageHandlerLa }>LAO</p></div>
+                    </motion.section>
+                </div>
             </header>
         </>
     )
