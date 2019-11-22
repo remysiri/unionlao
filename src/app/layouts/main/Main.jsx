@@ -22,17 +22,10 @@ import NotFoundPage from '../../pages/not-found-page';
 
 const Main = ({match, location}) => {
 
-    const changeLanguage = () => {
-    }
-
-    console.log(match);
-
-
-
     return (
         <>
             <Router>
-                <Header onClick={ changeLanguage } match={ match } /> 
+                <Header match={ match } /> 
                 <AnimatePresence exitBeforeEnter initial={false}>
                     <Switch>
                         <Route exact path={`${match.url}/`} render={() => <HomePage match={ match }/>}/>
