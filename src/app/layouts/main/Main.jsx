@@ -9,7 +9,7 @@ import { AnimatePresence } from 'framer-motion';
 /*
 Components
 */
-import Header from '../../components/general';
+import { Header } from '../../components/general';
 
 /*
 Pages

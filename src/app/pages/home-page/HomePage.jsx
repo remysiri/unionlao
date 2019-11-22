@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Carousel from '../../components/slider';
+import { Footer } from '../../components/general';
 
 const HomePage = (props) => {
     const [albums, setAlbums] = useState({});
@@ -18,7 +19,10 @@ const HomePage = (props) => {
     }, []);
 
     return (
-        <Carousel albums={ albums }/>
+        <>
+            <Carousel albums={ albums }/>
+            <Footer />
+        </>
     )
 }
 

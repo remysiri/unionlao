@@ -1,3 +1,4 @@
 import Header from './Navigation';
+import Footer from './Footer';
 
-export default Header;
+export { Header, Footer };
