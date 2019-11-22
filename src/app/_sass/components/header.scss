@@ -9,6 +9,7 @@ header {
 
     .header-menu {
         margin: 4.4rem 0 4.4rem 4.4rem;
+        cursor: pointer;
 
         span {
             font-weight: 700;
@@ -31,6 +32,36 @@ header {
 
     .dark {
         color: black;
+    }
+}
+
+.menu {
+    position: absolute;
+    height: 100vh;
+    width: auto;
+    padding: 3rem;
+    background: white;
+
+    .menu__header {
+        margin-bottom: 4rem;
+        cursor: pointer;
+
+        span { font-weight: 700; padding-left: 1.5rem; }
+    }
+
+    div {
+        margin: .5rem;
+        padding: .5rem;
+        a {
+            color: black;
+            font-weight: 400;
+            font-size: 2rem;
+        }
+    }
+
+    .menu__footer {
+        position: absolute;
+        bottom: 6rem;
     }
 }
 
