@@ -16,7 +16,7 @@ ReactDOM.render(
         <ConnectedRouter history={ history }>
             <Switch>
                 <Route path="/:locale(fr|la)" component={ App } />
-                <Redirect to="/fr" />
+                <Redirect to="/la" />
             </Switch>
         </ConnectedRouter>
     </Provider>,
