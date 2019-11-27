@@ -1,9 +1,18 @@
 .detail__wrapper {
     padding-top: 10rem;
 
+    @include tablet {
+        padding: 10rem 8.8rem 0 8.8rem;
+    }
+
     .detail {
         .detail__content {
             margin: 4.4rem;
+
+            @include tablet {
+                max-width: 80rem;
+                margin: 4.4rem auto;
+            }
 
             .detail__content-title {
                 font-size: 2rem;

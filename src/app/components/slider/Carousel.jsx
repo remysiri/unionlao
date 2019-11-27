@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Moment from 'react-moment';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { wrap } from '@popmotion/popcorn';
 import { Link } from 'react-router-dom';
@@ -45,7 +44,6 @@ const variants = {
   };
 
 
-
 const Carousel = (props) => {
     const albums = props.albums;
     const match = props.match;
@@ -59,7 +57,7 @@ const Carousel = (props) => {
 
 	const style = {
 		backgroundImage: `url('${thumbnailImage}')`
-	};
+  };
 
 
 
@@ -97,7 +95,7 @@ const Carousel = (props) => {
                     <motion.div className="slider__content" variants={textVariants}>
                       <Link to={`${match.url}/album/${albums[key] && albums[key].slug}`}>
                         <h1>{ albums[key] && albums[key].title }</h1>
-                        <p><Moment format="DD/MM/YYYY">{ !albums[key] ? undefined : albums[key].postDate.date }</Moment></p>
+                        <Link className="button-text" to={`${match.url}/album/${albums[key] && albums[key].slug}`}>Visionner le album<span className="button-underline"></span></Link>
                       </Link>
                     </motion.div>
                     <div className="slider__cover"></div>
@@ -105,11 +103,6 @@ const Carousel = (props) => {
                   </motion.div>    
                 </motion.div>
         </AnimatePresence>
-
-        <div className="sliders__navigation">
-            <div className="next" onClick={() => paginate(1)}>{"‣"}</div>
-            <div className="prev" onClick={() => paginate(-1)}>{"‣"}</div>
-        </div>
 
 
         </section>

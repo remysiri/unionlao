@@ -7,13 +7,26 @@ header {
     align-content: center;
     width: 100%;
 
-    .header-menu {
+    .header-logo {
         margin: 4.4rem 0 4.4rem 4.4rem;
+
+        img {
+            height: 2.4rem;
+        }
+    }
+
+    .header-menu {
+        display: flex;
+        margin: 4.4rem 4.4rem 4.4rem 0;
         cursor: pointer;
+        justify-content: flex-end;
+        align-items: center;
 
         span {
             font-weight: 700;
-            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            text-transform: uppercase;
+            font-size: 1.2rem;
         }
     }
 
@@ -43,8 +56,9 @@ header {
     height: 100vh;
     width: auto;
     padding: 3rem;
+    right: 0;
     background: white;
-    transform: translateX(-100%) translateZ(0px);
+    transform: translateX(100%) translateZ(0px);
 
     .menu__header {
         margin-bottom: 4rem;
@@ -75,8 +89,8 @@ header {
     height: 20rem;
     overflow: hidden;
     width: auto;
-    right: 0;
-    top: 7rem;
+    right: 9.5rem;
+    top: 28rem;
 }
 
 .language {
@@ -90,7 +104,7 @@ header {
         padding: 1rem;
 
         p {
-            color: #C2C2C2;
+            color: black;
             font-weight: 700;
             margin: 0;
             cursor: pointer;

@@ -8,27 +8,6 @@
     overflow: hidden;
     background-color: black;
 
-    .sliders__navigation {
-        .next, .prev {
-            top: calc(50% - 2rem);
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            user-select: none;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 4rem;
-            color: white;
-            z-index: 2;
-        }
-
-        .next { right: 1rem; }
-        .prev { left: 1rem; transform: scale(-1);}
-    }
-
-
-
     .slider {
         position: absolute;
         z-index: -9998;
@@ -51,17 +30,27 @@
         }
 
         .slider__content {
-            padding-top: 40rem;
+            padding-top: 24rem;
             margin: 0 4.4rem 4.4rem 4.4rem;
+            user-select: none;
 
             h1 {
-                margin: 0;
+                margin: 2rem 0;
                 color: white;
             }
 
-            p {
-                color: white;
-                margin-top: 1rem;
+            .button-text {
+                margin-top: 2rem;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 1.4rem;
+
+                .button-underline {
+                    height: 0.1rem;
+                    width: 10rem;
+                    background: white;
+                    display: block;
+                }
             }
         }
     }

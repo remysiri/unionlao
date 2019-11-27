@@ -1,10 +1,11 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import MenuW from '../../assets/menu-white.svg';
 import MenuB from '../../assets/menu-black.svg';
 import closeB from '../../assets/menu-close-black.svg';
+import Logo from '../../assets/logo.png';
 import { history } from '../../../utils/configureStore';
 
 const transition = {
@@ -33,7 +34,7 @@ const Header = (props) => {
         } else {
             setMenuExpanded(false);
             setAnimateMenu({
-                x: "-100%",
+                x: "100%",
                 transition
             });
         }
@@ -84,11 +85,11 @@ const Header = (props) => {
     return (
         <>
             <header className={classNames}>
+                <div className="header-logo"><img src={ Logo } alt="logo" /></div>
                 <div className="header-menu" onClick={ expandMenu }>
-                    <img src={id.pathname !== match.url ? MenuB : MenuW } alt="menu-icon"/>
                     <span className={id.pathname !== match.url ? "dark" : "light"}>Menu</span>
+                    <img src={id.pathname !== match.url ? MenuB : MenuW } alt="menu-icon"/>
                 </div>
-                <div className="header__language-selector" onClick={ expandLanguage }><p>{ match.params.locale.toUpperCase() }</p></div>
 
                 <motion.section className="menu" animate={ animateMenu }>
                     <div className="menu__header" onClick={ expandMenu }>
@@ -98,6 +99,7 @@ const Header = (props) => {
                     <div><a>Informations sur U.L.B</a></div>
                     <div><a>Devenir membre</a></div>
                     <div><a>Nous contacter</a></div>
+                    <div onClick={ expandLanguage }><p>Language: <span>{ match.params.locale.toUpperCase() }</span></p></div>
                     <div className="menu__footer"><p>© {(new Date().getFullYear())} Unionlao</p></div>
                 </motion.section>
 

@@ -4,7 +4,7 @@ import Logo from '../../assets/logo.png';
 const Footer = () => {
     return (
         <>
-        <div className="footer__logo"><img src={ Logo } alt="logo" /></div>
+        <div className="footer__logo"><p>Balayer pour explorer</p></div>
         </>
     );
 }
