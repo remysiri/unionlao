@@ -113,9 +113,9 @@ const Header = (props) => {
 
                         <div className="language__wrapper">
                             <motion.section className="language" animate={ animateLanguage }>
-                                <div><p id="fr" onClick={ languageHandlerFr }>Français</p></div>
-                                <div><p id="nl" onClick={ languageHandlerNl }>Nederlands</p></div>
-                                <div><p id="la" onClick={ languageHandlerLa }>ພາສາລາວ</p></div>
+                                <div><p id="fr" className={ match.params.locale === 'fr' ? 'active' : '' } onClick={ languageHandlerFr }>Français</p></div>
+                                <div><p id="nl" className={ match.params.locale === 'nl' ? 'active' : '' } onClick={ languageHandlerNl }>Nederlands</p></div>
+                                <div><p id="la" className={ match.params.locale === 'la' ? 'active' : '' } onClick={ languageHandlerLa }>ພາສາລາວ</p></div>
                             </motion.section>
                         </div>
                     </div>
@@ -128,7 +128,7 @@ const Header = (props) => {
                 <motion.section className="menu" animate={ animateMenu }>
                     <div className="menu__header" onClick={ expandMenu }>
                         <img src={ closeB } alt="menu-icon-close" />
-                        <span className="dark">Fermer</span>
+                        <span>Fermer</span>
                     </div>
                     <div><a>Informations sur U.L.B</a></div>
                     <div><a>Devenir membre</a></div>
