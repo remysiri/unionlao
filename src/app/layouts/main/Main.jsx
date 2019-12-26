@@ -15,6 +15,7 @@ import { Header } from '../../components/general';
 Pages
 */
 import HomePage from '../../pages/home-page';
+import MediaPage from '../../pages/media-page';
 import DetailPage from '../../pages/detail-page';
 import AboutPage from '../../pages/about-page';
 import ContactPage from '../../pages/contact-page';
@@ -30,6 +31,7 @@ const Main = ({match, location}) => {
                     <Switch>
                         <Route exact path={`${match.url}/`} render={() => <HomePage match={ match }/>}/>
                         <Route exact path={`${match.url}/album/:slug`} render={() => <DetailPage match={ match }/>}/>
+                        <Route exact path={`${match.url}/media`} render={() => <MediaPage match={ match }/>}/>
                         <Route path="/about" component={ AboutPage }/>
                         <Route path="/contact" component={ ContactPage }/>
                         <Route path="*" component={ NotFoundPage }/>

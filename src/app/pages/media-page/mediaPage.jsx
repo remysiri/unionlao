@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Detail from '../../components/detail';
 import { motion } from 'framer-motion';
 
-const DetailPage = (props) => {
+const MediaPage = (props) => {
     const [data, setData] = useState({});
     let id = useParams();
     let slug = id.slug;
@@ -29,4 +28,4 @@ const DetailPage = (props) => {
     )
 }
 
-export default DetailPage;
+export default MediaPage;

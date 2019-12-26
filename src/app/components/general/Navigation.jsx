@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import arrowDown from '../../assets/arrow-down.svg';
@@ -93,7 +93,7 @@ const Header = (props) => {
                 <div className="header-right">
                     <div className="header-navigation">
                         <li>Evenements</li>
-                        <li>Media</li>
+                        <li><Link to={`${match.params.locale}/media`}>Media</Link></li>
                     </div>
                     <div className="header-language" onClick={ expandLanguage }>
                         { (() => {
