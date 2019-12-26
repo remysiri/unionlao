@@ -1,0 +1,23 @@
+.homepage {
+    .row {
+        max-width: 60%;
+
+        .section-title {
+            color: $color-primary;
+
+            h2 {
+                margin-bottom: 1.4rem;
+            }
+        }
+
+        .section-content {
+            color: $color-primary;
+
+            p {
+                margin: 0;
+                padding: 0;
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
