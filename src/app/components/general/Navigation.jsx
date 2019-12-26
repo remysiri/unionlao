@@ -131,7 +131,10 @@ const Header = (props) => {
                         <span>Fermer</span>
                     </div>
                     <div><a>Informations sur U.L.B</a></div>
-                    <div><a>Devenir membre</a></div>
+                    <div><a>Traditions et culture</a></div>
+                    <div><a>Missions et valeurs</a></div>
+                    <div><a>Faire une donation</a></div>
+                    <div><a>Rejoindre l'association</a></div>
                     <div><a>Nous contacter</a></div>
                 </motion.section>
             </header>
