@@ -1,5 +1,4 @@
 header {
-    position: fixed;
     z-index: 10;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -8,46 +7,54 @@ header {
     width: 100%;
 
     .header-logo {
+        display: flex;
         margin: 4.4rem 0 4.4rem 4.4rem;
 
         img {
-            height: 2.4rem;
+            height: 3rem;
+        }
+
+        span {
+            width: 10rem;
+            padding-left: 1.5rem;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            align-items: top;
         }
     }
 
-    .header-menu {
+    .header-right {
         display: flex;
         margin: 4.4rem 4.4rem 4.4rem 0;
-        cursor: pointer;
         justify-content: flex-end;
         align-items: center;
 
-        span {
+        .header-navigation li {
+            display: inline-block;
+            margin: 0 1.5rem 0 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        .header-language {
+            padding-right: 1.5rem;
+            cursor: pointer;
+    
+            span {
+                color: $color-grey;
+                padding-right: 1.5rem;
+                text-transform: uppercase;
+                font-size: 1.2rem;
+            }
+        }
+
+        .header-menu span {
             font-weight: 700;
             padding-right: 1.5rem;
             text-transform: uppercase;
             font-size: 1.2rem;
         }
-    }
-
-    .header__language-selector {
-        text-align: right;
-        margin: 4.4rem 4.4rem 4.4rem 0;
-        cursor: pointer;
-        
-        p {
-            color: #C2C2C2;
-            margin: 0;
-            font-weight: 700;
-        }
-    }
-
-    .light {
-        color: white;
-    }
-
-    .dark {
-        color: black;
     }
 }
 
@@ -57,7 +64,7 @@ header {
     width: auto;
     padding: 3rem;
     right: 0;
-    background: white;
+    background: black;
     transform: translateX(100%) translateZ(0px);
 
     .menu__header {
@@ -76,38 +83,32 @@ header {
             font-size: 2rem;
         }
     }
-
-    .menu__footer {
-        position: absolute;
-        bottom: 6rem;
-    }
 }
 
 .language__wrapper { 
     position: absolute;
-    width: 10rem;
-    height: 20rem;
+    height: 9rem;
     overflow: hidden;
     width: auto;
-    right: 9.5rem;
-    top: 28rem;
 }
 
 .language {
-    position: relative;
     width: auto;
-    padding: 0rem 2rem 2rem 2rem;
-    transform: translateY(-100%) translateZ(0px);
+    transform: translateY(-140%) translateZ(0px);
 
     div {
-        margin: 1rem .4rem;
-        padding: 1rem;
+        margin: 1rem 0;
 
         p {
-            color: black;
-            font-weight: 700;
+            color: $color-grey;
+            text-transform: uppercase;
             margin: 0;
             cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        p:hover {
+            color: black;
         }
     }
 }

@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import MenuW from '../../assets/menu-white.svg';
+import arrowDown from '../../assets/arrow-down.svg';
 import MenuB from '../../assets/menu-black.svg';
 import closeB from '../../assets/menu-close-black.svg';
 import Logo from '../../assets/logo.png';
@@ -50,7 +50,7 @@ const Header = (props) => {
         } else {
             setLanguageExpanded(false);
             setAnimateLanguage({
-                y: "-100%",
+                y: "-140%",
                 transition
             });
         }
@@ -85,10 +85,44 @@ const Header = (props) => {
     return (
         <>
             <header className={classNames}>
-                <div className="header-logo"><img src={ Logo } alt="logo" /></div>
-                <div className="header-menu" onClick={ expandMenu }>
-                    <span className={id.pathname !== match.url ? "dark" : "light"}>Menu</span>
-                    <img src={id.pathname !== match.url ? MenuB : MenuW } alt="menu-icon"/>
+                <div className="header-logo">
+                    <img src={ Logo } alt="logo" />
+                    <span>Union des Lao en Belgique</span>
+                </div>
+
+                <div className="header-right">
+                    <div className="header-navigation">
+                        <li>Evenements</li>
+                        <li>Media</li>
+                    </div>
+                    <div className="header-language" onClick={ expandLanguage }>
+                        { (() => {
+                            switch(match.params.locale) {
+                                case 'fr':
+                                    return <span>Français</span>;
+                                    break;
+                                case 'nl':
+                                    return <span>Nederlands</span>;
+                                    break;
+                                case 'la':
+                                    return <span>ພາສາລາວ</span>;
+                                    break;
+                            }
+                        })()}
+                        <img src={arrowDown} alt="menu-icon"/>
+
+                        <div className="language__wrapper">
+                            <motion.section className="language" animate={ animateLanguage }>
+                                <div><p id="fr" onClick={ languageHandlerFr }>Français</p></div>
+                                <div><p id="nl" onClick={ languageHandlerNl }>Nederlands</p></div>
+                                <div><p id="la" onClick={ languageHandlerLa }>ພາສາລາວ</p></div>
+                            </motion.section>
+                        </div>
+                    </div>
+                    <div className="header-menu" onClick={ expandMenu }>
+                        <span>Menu</span>
+                        <img src={MenuB} alt="menu-icon"/>
+                    </div>
                 </div>
 
                 <motion.section className="menu" animate={ animateMenu }>
@@ -99,17 +133,7 @@ const Header = (props) => {
                     <div><a>Informations sur U.L.B</a></div>
                     <div><a>Devenir membre</a></div>
                     <div><a>Nous contacter</a></div>
-                    <div onClick={ expandLanguage }><p>Language: <span>{ match.params.locale.toUpperCase() }</span></p></div>
-                    <div className="menu__footer"><p>© {(new Date().getFullYear())} Unionlao</p></div>
                 </motion.section>
-
-                <div className="language__wrapper">
-                    <motion.section className="language" animate={ animateLanguage }>
-                        <div><p id="fr" onClick={ languageHandlerFr }>FRA</p></div>
-                        <div><p id="nl" onClick={ languageHandlerNl }>NED</p></div>
-                        <div><p id="la" onClick={ languageHandlerLa }>LAO</p></div>
-                    </motion.section>
-                </div>
             </header>
         </>
     )

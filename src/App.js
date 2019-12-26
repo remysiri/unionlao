@@ -20,7 +20,9 @@ import './app/_sass/App.scss';
 
 function App({ match, location }) {
   return (
+    <div className="container">
       <Main match={match} location={location}/>
+    </div>
   );
 }
 
