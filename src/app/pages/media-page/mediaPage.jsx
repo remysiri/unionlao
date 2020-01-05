@@ -12,7 +12,7 @@ const MediaPage = (props) => {
         const res = await fetch(`https://cms.unionlao.be/${match.params.locale}/api/albums.json`);
         res
             .json()
-            .then(res => setData(res))
+            .then(res => setData(res.data))
             .catch(err => console.log(err))
     }
 
@@ -21,9 +21,20 @@ const MediaPage = (props) => {
     }, []);
 
 
-
     return (
         <>
+        <section className="container__media">
+        { Object.keys(data).map((key) => {
+            return <div className="row media-row" key={data[key].id}>
+                <div className="media-image"></div>
+                <div className="media-content">
+                    <h2>{data[key].title}</h2>
+                    <p>{data[key].description}</p>
+                    <a href="#">Visionner le album</a>
+                </div>
+            </div>
+        })}
+        </section>
         </>
     )
 }
